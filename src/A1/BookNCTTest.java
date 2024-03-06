@@ -2,20 +2,18 @@ package A1;
 
 import java.time.LocalDateTime;
 import java.time.Month;
-public class BookNCTTest implements BookNCTWeb{
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+//import org.junit.jupiter.api.Test;
+public class BookNCTTest{
 
-    private int bookingID;
-    private TestCentre testCentre;
-    private static int nextbookingID = 1;
-    private LocalDateTime dateTime;
-    private BookNCTWeb bookWeb;
-
-    public void setBookService(BookNCTWeb book){
-        this.bookWeb = book;
+    @Test
+    public void testCentre() throws InvalidDateTimeException {
+        TestCentre centre1 = new TestCentre("Ballinasloe", "Unit 9, Pollboy Industrial Estate, Ballinasloe, Galway H53 NW94");
+        BookNCT booking1 = new BookNCT("16-WH-59741", centre1, LocalDateTime.of(2023, Month.OCTOBER, 22, 8, 0));
+        TestCentre centreFromBooking = booking1.queryTestCentre();
+        assertEquals(centreFromBooking, centre1, "Test centre query successful");
     }
 
-    @Override
-    public LocalDateTime getBookingDateTime(TestCentre testCentre) {
-        return null;
-    }
+
 }
