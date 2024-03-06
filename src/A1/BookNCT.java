@@ -33,7 +33,7 @@ public class BookNCT implements BookNCTWeb {
     }
 
     // Constructor for booking without specifying date and time
-    public BookNCT(String regNo, TestCentre testCentre) {
+    public BookNCT(String regNo, TestCentre testCentre, LocalDateTime localDateTime) {
         this.regNo = regNo;
         this.centre = centre;
         this.bookingID = nextBookingID++; // Assign a unique booking ID
