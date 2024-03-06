@@ -13,4 +13,9 @@ public class BookNCTTest implements BookNCTWeb{
     public void setBookService(BookNCTWeb book){
         this.bookWeb = book;
     }
+
+    @Override
+    public LocalDateTime getBookingDateTime(TestCentre testCentre) {
+        return null;
+    }
 }
